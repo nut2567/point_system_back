@@ -4,7 +4,7 @@ const { rewards, users } = require('../mockData');
 const router = express.Router();
 
 // Secret key สำหรับการ sign token
-const secretKey = 'secret-key';
+const secretKey = 'P@55w0rD';
 
 // POST /users/login
 

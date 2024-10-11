@@ -30,10 +30,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/rewards', rewardsRouter);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/rewards', rewardsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
