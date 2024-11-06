@@ -14,11 +14,12 @@ var app = express();
 
 
 // ใช้ CORS middleware
-app.use(cors({
-  origin: 'http://localhost:3000', // อนุญาตให้โดเมนนี้เข้าถึง
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // วิธีที่อนุญาต
-  credentials: true // ถ้าคุณต้องการส่ง cookies หรือ HTTP Auth
-}));
+// app.use(cors({
+//   origin: 'http://localhost:3000', // อนุญาตให้โดเมนนี้เข้าถึง
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // วิธีที่อนุญาต
+//   credentials: true // ถ้าคุณต้องการส่ง cookies หรือ HTTP Auth
+// }));
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

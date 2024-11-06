@@ -3,3 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  
+  p /Product res.json(Product);  
+  p /          res.render('index', { title: 'Express' });
+  p /rewards/:id  res.json(reward);
+  p /rewards/  res.json(reward);
+  p /users/profile  token = req.headers['authorization']?.split(' ')[1];
+  p /users/login   { username, password } = req.body;
+  p /users/Redeem    { username, Redeem_id } = req.body;

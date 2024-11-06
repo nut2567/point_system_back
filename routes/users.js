@@ -54,6 +54,17 @@ function verifyToken(req, res, next) {
   });
 }
 
+router.get('/profile', verifyToken, function (req, res) {
+
+  // ค้นหาผู้ใช้จาก mock data
+  const user = users.find(u => u.username === req.user);
+  console.log(req.user)
+  if (!user) {
+    return res.status(404).json({ message: 'User not found!' });
+  }
+  res.json(user);
+});
+
 // ตัวอย่าง API ที่ต้องใช้การ Authen
 router.put('/Redeem', (req, res, next) => {
 
@@ -88,16 +99,5 @@ router.put('/Redeem', (req, res, next) => {
 });
 
 
-
-router.get('/profile', verifyToken, function (req, res) {
-
-  // ค้นหาผู้ใช้จาก mock data
-  const user = users.find(u => u.username === req.user);
-  console.log(req.user)
-  if (!user) {
-    return res.status(404).json({ message: 'User not found!' });
-  }
-  res.json(user);
-});
 
 module.exports = router;
